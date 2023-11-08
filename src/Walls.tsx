@@ -19,7 +19,7 @@ const Walls = () => {
           opacity={0.7}
         />
       </mesh>
-      <mesh position={[44.8, 2, 0]}>
+      <mesh position={[44.85, 2, 0]}>
         <boxGeometry args={[0.3, 4, 40]} />
         <meshStandardMaterial
           attach="material"
@@ -28,7 +28,7 @@ const Walls = () => {
           opacity={0.7}
         />
       </mesh>
-      <mesh position={[-44.8, 2, 0]}>
+      <mesh position={[-44.85, 2, 0]}>
         <boxGeometry args={[0.3, 4, 40]} />
         <meshStandardMaterial
           attach="material"

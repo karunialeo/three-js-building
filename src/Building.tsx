@@ -3,16 +3,36 @@
 interface BuildingProps {
   position: any;
   color?: string;
-  rotation?: any;
+  rotation?: string;
   size?: string;
 }
 
 export const Building = ({
   position,
   color = "orange",
-  rotation = [0, 0, 0],
+  rotation = "normal",
   size = "large",
 }: BuildingProps) => {
+  const getRotation = () => {
+    let rotate;
+
+    switch (rotation) {
+      case "normal":
+        rotate = [0, 0, 0];
+        break;
+      case "left":
+        rotate = [0, Math.PI / 2, 0];
+        break;
+      case "right":
+        rotate = [0, Math.PI / -2, 0];
+        break;
+      default:
+        rotate = [0, 0, 0];
+    }
+
+    return rotate;
+  };
+
   const getBuildingLength = () => {
     let length;
 
@@ -21,7 +41,7 @@ export const Building = ({
         length = 18.4;
         break;
       case "medium":
-        length = 12;
+        length = 15;
         break;
       case "small":
         length = 7;
@@ -41,7 +61,7 @@ export const Building = ({
         length = 9.35;
         break;
       case "medium":
-        length = 6;
+        length = 7.4;
         break;
       case "small":
         length = 3.5;
@@ -53,16 +73,8 @@ export const Building = ({
     return length;
   };
 
-  //   const ref = useRef();
-
-  //   useFrame((state, delta) => {
-  //     ref.current.rotation.x += delta;
-  //     ref.current.rotation.y += delta;
-  //     ref.current.position.z = Math.sin(state.clock.elapsedTime) * 2;
-  //   });
-
   return (
-    <group position={position} rotation={rotation}>
+    <group position={position} rotation={getRotation()}>
       {/* BASE */}
       <mesh position={[0, -0.35, 0]}>
         <boxGeometry args={[getBuildingLength(), 0.3, 4]} />
