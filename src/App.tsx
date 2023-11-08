@@ -1,11 +1,4 @@
-import * as THREE from "three";
-import { useRef } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Cube } from "./Terrain";
-import { Sphere } from "./Sphere";
-import { Torus } from "./Torus";
-import { TorusKnot } from "./TorusKnot";
-import { OrbitControls } from "@react-three/drei";
 import { Scene } from "./Scene";
 
 export default function App() {
@@ -13,14 +6,18 @@ export default function App() {
   const initialCameraPosition = [0, 35, 30]; // Adjust these values as needed
 
   return (
-    <Canvas
-      gl={{ antialias: true }}
-      camera={{ position: initialCameraPosition }}
-      onCreated={({ gl }) => {
-        gl.setClearColor("#ffffff"); // Set the background color to white
-      }}
-    >
-      <Scene />
-    </Canvas>
+    <main className="w-screen h-screen p-10 flex items-end justify-center bg-blue-950">
+      <div className="w-full h-full">
+        <Canvas
+          gl={{ antialias: true }}
+          camera={{ position: initialCameraPosition }}
+          onCreated={({ gl }) => {
+            gl.setClearColor("#ffffff"); // Set the background color to white
+          }}
+        >
+          <Scene />
+        </Canvas>
+      </div>
+    </main>
   );
 }

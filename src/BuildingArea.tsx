@@ -10,11 +10,11 @@ export const BuildingArea = () => {
 
       <Terrain position={[-1, 0, 0]} color={"#e5d9c2"} size={[81, 0.4, 6]} />
 
-      <Corner position={[-43.65, 0.6, -18.8]} />
-      <Corner position={[43.65, 0.6, -18.8]} />
+      <Corner position={[-43.7, 0.6, -18.85]} />
+      <Corner position={[43.7, 0.6, -18.85]} />
 
-      <Corner position={[-43.65, 0.6, 18.8]} />
-      <Corner position={[43.65, 0.6, 18.8]} />
+      <Corner position={[-43.7, 0.6, 18.85]} />
+      <Corner position={[43.7, 0.6, 18.85]} />
 
       {/* TOP BUILDINGS */}
       <Building position={[-20, 0.6, -15]} color={"#fff68e"} />
